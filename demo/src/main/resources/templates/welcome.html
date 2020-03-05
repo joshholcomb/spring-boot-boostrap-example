@@ -30,22 +30,27 @@
             <div class="row">
                 <div class="col border">tasks</div>
                 <div class="col border">
-                    <ol>
-                        <li th:each="task : ${taskList}" th:text="${task.task}"></li>
-                    </ol>
+                    <ul>
+                        <li th:each="task : ${taskList}" th:text="${task.id + ' - ' + task.task}"></li>
+                    </ul>
                 </div>
             </div>
 
-            
-            <form action="#" th:action="@{/welcome}" th:object="${task}" method="post">
-                <div class="form-group">
-                    <label for="taskId">Task ID:</label>
-                    <input type="text" th:field="*{id}" id="taskId" />
-                    <label for="taskInput">Task Name:</label>
-                    <input type="text" th:field="*{task}" id="taskInput">
-                    <button type="submit" class="btn btn-primary">Add Task</button>
+            <div class="row">
+                <div class="col border" colspan="2">
+                    <p>new task</p>
+                    <form action="#" th:action="@{/welcome}" th:object="${task}" method="post">
+                        <div class="form-group">
+                            <label for="taskId">Task ID:</label>
+                            <input type="text" th:field="*{id}" id="taskId" style="width: 40px" />
+                            <label for="taskInput">Task Name:</label>
+                            <input type="text" th:field="*{task}" id="taskInput">
+                        
+                            <button type="submit" class="btn btn-primary">Add Task</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         
         </div>
     </main>
