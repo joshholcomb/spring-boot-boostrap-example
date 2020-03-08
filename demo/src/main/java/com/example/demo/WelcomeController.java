@@ -20,10 +20,9 @@ public class WelcomeController {
     @Value("${welcome.message}")
     private String message;
 
-    private List<String> tasks = Arrays.asList("task1", "task2", "task3");
     private List<Task> taskList = new ArrayList<Task>();
 
-    @GetMapping("/welcome")
+    @GetMapping("/")
     public String main(Model model) {
         model.addAttribute("message", message);
         model.addAttribute("taskList", taskList);
@@ -32,7 +31,7 @@ public class WelcomeController {
         return "welcome"; //view
     }
 
-    @PostMapping("/welcome")
+    @PostMapping("/")
     public String welcomeSubmit(Model model, @ModelAttribute Task task) {
         taskList.add(task);
         int listSize = taskList.size();
