@@ -16,7 +16,7 @@
 
     <main role="main" class="container">
         <div align="center">
-            <h1>Task List</h1>
+            <h1>SpringBoot Example - My Task List</h1>
 
             <hr/>
             <br/>
@@ -35,14 +35,17 @@
                     <p>new task</p>
                     <form action="#" th:action="@{/}" th:object="${task}" method="post">
                         <div class="form-group">
-                            <label for="taskId">Task ID:</label>
-                            <input type="text" th:field="*{id}" id="taskId" style="width: 40px" />
                             <label for="taskInput">Task Name:</label>
                             <input type="text" th:field="*{task}" id="taskInput">
                         
                             <button type="submit" class="btn btn-primary">Add Task</button>
                         </div>
                     </form>
+                    
+                    <form action="#" th:action="@{/clear}" method="post">
+                        <button type="submit" class="btn btn-primary">Clear Tasks</button>
+                    </form>
+                    
                 </div>
             </div>
         

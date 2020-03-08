@@ -33,9 +33,21 @@ public class WelcomeController {
 
     @PostMapping("/")
     public String welcomeSubmit(Model model, @ModelAttribute Task task) {
+        int size = taskList.size();
+        size = size + 1;
+        task.setId(size);
         taskList.add(task);
-        int listSize = taskList.size();
-        System.out.println("task list size: " + listSize);
+        
+
+        model.addAttribute("taskList", taskList);
+        model.addAttribute("task", new Task());
+        return "welcome";
+    }
+
+    @PostMapping("/clear")
+    public String clearTasks(Model model) {
+        System.out.println("clearing tasks");
+        taskList.clear();
         model.addAttribute("taskList", taskList);
         model.addAttribute("task", new Task());
         return "welcome";
