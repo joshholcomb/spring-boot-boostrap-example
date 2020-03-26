@@ -5,11 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +28,10 @@ public class WelcomeController {
         return "welcome"; //view
     }
 
+
+    /*
+        posting data to add a task
+    */
     @PostMapping("/")
     public String welcomeSubmit(Model model, @ModelAttribute Task task) {
         int size = taskList.size();
