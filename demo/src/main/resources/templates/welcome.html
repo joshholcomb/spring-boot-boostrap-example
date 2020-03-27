@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hello World Example</title>
+    <title>SpringBoot Example</title>
 
     <!-- include bootstrap -->
     <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
@@ -25,18 +25,18 @@
                 <div class="col border"><b>My Tasks</b></div>
                 <div class="col border">
                     <ul>
-                        <li th:each="task : ${taskList}" th:text="${task.id + ' - ' + task.task}"></li>
+                        <li th:each="task : ${taskList}" th:text="${task.id + ' - ' + task.name}"></li>
                     </ul>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col border" colspan="2">
-                    <p>new task</p>
                     <form action="#" th:action="@{/}" th:object="${task}" method="post">
+                        <p></p>
                         <div class="form-group">
                             <label for="taskInput">Task Name:</label>
-                            <input type="text" th:field="*{task}" id="taskInput">
+                            <input type="text" th:field="*{name}" id="taskInput">
                         
                             <button type="submit" class="btn btn-primary">Add Task</button>
                         </div>
@@ -45,7 +45,6 @@
                     <form action="#" th:action="@{/clear}" method="post">
                         <button type="submit" class="btn btn-primary">Clear Tasks</button>
                     </form>
-                    
                 </div>
             </div>
         

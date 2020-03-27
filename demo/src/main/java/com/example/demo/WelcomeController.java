@@ -39,7 +39,6 @@ public class WelcomeController {
         task.setId(size);
         taskList.add(task);
         
-
         model.addAttribute("taskList", taskList);
         model.addAttribute("task", new Task());
         return "welcome";

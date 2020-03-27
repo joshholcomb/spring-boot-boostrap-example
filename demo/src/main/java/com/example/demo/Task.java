@@ -2,7 +2,7 @@ package com.example.demo;
 
 public class Task {
     private long id;
-    private String task;
+    private String name;
 
     public long getId() {
         return id;
@@ -12,11 +12,11 @@ public class Task {
         this.id = id;
     }
 
-    public String getTask() {
-        return task;
+    public String getName() {
+        return name;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setName(String name) {
+        this.name = name;
     }
 }
